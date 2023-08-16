@@ -1,0 +1,37 @@
+//?MEDIA QUERY ROOT 
+$mouseDeviceMedia: '(hover:hover) and (pointer:fine)';
+
+$l-size-media: '(width <= 1250px)';
+$s-size-media: '(width <= 600px)';
+
+//?COLOR ROOT
+:root {
+  --h-0: 0;
+  --h-gray: 213;
+  --h-green: 84;
+  --h-blue: 216;
+
+  --s-100: 100%;
+  --s-10: 10%;
+  --s-0: 0%;
+
+  --l-100: 100%;
+  --l-70: 70%;
+  --l-60: 60%;
+  --l-50: 50%;
+  --l-25: 25%;
+  --l-0: 0%;
+
+  --primary-color: var(--h-0) var(--s-100) var(--l-0);
+  --secondary-color: var(--h-0) var(--s-100) var(--l-100);
+
+  --light-gray-color: var(--h-0) var(--s-0) var(--l-70);
+  --gray-color: var(--h-gray) var(--s-10) var(--l-25);
+  --green-color: var(--h-green) var(--s-100) var(--l-60);
+  --blue-color: var(--h-blue) var(--s-100) var(--l-50);
+}
+
+//?MAIN ROOT
+:root {
+  --primary-border-radius: .25rem;
+}

@@ -1,0 +1,19 @@
+@import 'components/header__component.scss';
+@import 'base/type.scss';
+
+//?RESET STYLES
+*:not(head > *),
+*::before,
+*::after {
+  all: unset;
+  box-sizing: border-box;
+}
+
+div {
+  display: block;
+}
+
+//?MAIN STYLES
+#app {
+  min-height: 100vh;
+}

@@ -1,0 +1,32 @@
+@use '../root' as *;
+
+%form-element {
+  outline: 1px solid hsl(var(--light-gray-color));
+  padding: .35rem .45rem;
+  border-radius: var(--primary-border-radius);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transition: box-shadow .25s;
+    box-shadow: 0 0 5px 1px hsl(var(--light-gray-color));
+  }
+}
+
+%primary-button {
+  background: hsl(var(--blue-color));
+  padding: .5rem;
+  border-radius: var(--primary-border-radius);
+  cursor: pointer;
+  position: relative;
+
+  &:active {
+    top: 2px;
+  }
+
+  &:hover,
+  &:focus {
+    transition: box-shadow .25s;
+    box-shadow: 0 0 5px 1px hsl(var(--blue-color));
+  }
+}

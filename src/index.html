@@ -4,10 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo-list</title>
-  <script src="scripts/index.ts" defer></script>
-  <link rel="stylesheet" href="styles/main.scss">
+  <script src="scripts/index.ts" type="module" defer></script>
 </head>
 <body>
-  
+  <div id="app">
+    <header class="header">
+      <form class="header__form-select form-select" name="select_form">
+        <fieldset>
+          <legend>Выберите таблицу:</legend>
+          <select name="select_form_select" class="form-select__input-select">
+            <option value="1" selected>По умолчанию</option>
+          </select>
+        </fieldset>
+      </form>
+      <nav class="header__nav-todo">
+        <ul>
+          <li class="header__link-nav" data-selected>Задачи</li>
+          <li class="header__link-nav">В процессе</li>
+          <li class="header__link-nav">Выполненны</li>
+        </ul>
+      </nav>
+      <form class="header__form-add-tab form-add-tab" name="add_tab_form">
+        <fieldset>
+          <legend>Добавить таблицу</legend>
+          <input type="text" 
+            name="add_tab_form_input" 
+            class="form-add-tab__input"
+            placeholder="Введите название таблицы..."
+          >
+        <button 
+          type="submit" 
+          name="add-tab-form_submit"
+          class="form-add-tab__submit">
+            Добавить
+        </button>
+        </fieldset>
+      </form>
+      <button class="header__button-show_menu">
+        <img src="assets/arrow-bottom-1-svgrepo-com.svg" 
+          alt="an bottom arrow icon for show hidden menu">
+      </button>
+    </header>
+    <main class="main">
+      <section class="main__section-todo todo-section" aria-for="Todo List">
+        <div class="todo-section__column-todo"></div>
+        <div class="todo-section__column-progress"></div>
+        <div class="todo-section__column-completed"></div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

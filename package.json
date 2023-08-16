@@ -18,6 +18,7 @@
     "parcel": "^2.9.3"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.9.3"
+    "@parcel/transformer-sass": "^2.9.3",
+    "dart-sass": "^1.25.0"
   }
 }
