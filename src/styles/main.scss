@@ -1,5 +1,6 @@
-@import 'components/header__component.scss';
-@import 'base/type.scss';
+@use 'abstract/root/_index.scss' as *;
+@use 'components/_index.scss';
+@use 'base/type.scss';
 
 //?RESET STYLES
 *:not(head > *),
@@ -15,5 +16,21 @@ div {
 
 //?MAIN STYLES
 #app {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: hsl(var(--secondary-color));
+}
+
+.main {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+#button_toggle-theme {
+  --button-color: hsl(var(--orange-color));
+  @extend %primary-button;
 }

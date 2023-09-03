@@ -7,51 +7,75 @@
   <script src="scripts/index.ts" type="module" defer></script>
 </head>
 <body>
-  <div id="app">
-    <header class="header">
-      <form class="header__form-select form-select" name="select_form">
-        <fieldset>
-          <legend>Выберите таблицу:</legend>
-          <select name="select_form_select" class="form-select__input-select">
-            <option value="1" selected>По умолчанию</option>
-          </select>
-        </fieldset>
-      </form>
-      <nav class="header__nav-todo">
-        <ul>
-          <li class="header__link-nav" data-selected>Задачи</li>
-          <li class="header__link-nav">В процессе</li>
-          <li class="header__link-nav">Выполненны</li>
-        </ul>
-      </nav>
-      <form class="header__form-add-tab form-add-tab" name="add_tab_form">
-        <fieldset>
-          <legend>Добавить таблицу</legend>
-          <input type="text" 
-            name="add_tab_form_input" 
-            class="form-add-tab__input"
-            placeholder="Введите название таблицы..."
-          >
-        <button 
-          type="submit" 
-          name="add-tab-form_submit"
-          class="form-add-tab__submit">
-            Добавить
-        </button>
-        </fieldset>
-      </form>
-      <button class="header__button-show_menu">
-        <img src="assets/arrow-bottom-1-svgrepo-com.svg" 
-          alt="an bottom arrow icon for show hidden menu">
+<div id="app">
+  <header class="header">
+    <form class="header__form-add form-add" name="form_add_tab">
+      <fieldset>
+        <legend class="vs-hidden">Добавьте таблицу</legend>
+        <input type="text" 
+          name="form_add_tab_input" 
+          class="form-add__input"
+          placeholder="Введите название таблицы..."
+        >
+      <button 
+        type="submit" 
+        name="form_add_tab_submit"
+        class="form-add__submit">
+          Добавить
       </button>
-    </header>
-    <main class="main">
-      <section class="main__section-todo todo-section" aria-for="Todo List">
-        <div class="todo-section__column-todo"></div>
-        <div class="todo-section__column-progress"></div>
-        <div class="todo-section__column-completed"></div>
-      </section>
-    </main>
-  </div>
+      </fieldset>
+    </form>
+    <nav class="header__nav nav-select">
+      <strong class="vs-hidden">Выберите таблицу:</strong>
+      <ul>
+        <li class="nav-select__link" data-selected>
+          <a href="">Текущая</a>
+          <button class="nav-select__button-rename">
+            <img src="assets/rename-svgrepo-com.svg" alt="rename icon">
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__container-toggle-theme">
+      <button id="button_toggle-theme">Переключить тему</button>
+    </div>
+    <div class="header__container-aside-toggle">
+      <button 
+        class="header__button-aside-toggle" 
+        data-type="toggle_aside"
+        aria-expanded="false">
+        <img src="assets/chevron-down-svgrepo-com.svg" alt="chevron icon">
+      </button>
+    </div>
+  </header>
+  <aside 
+    class="aside" 
+    aria-expanded="false" 
+    data-type="menu_aside">
+    Menu
+  </aside>
+  <main class="main">
+    <section class="main__section-todo todo-section" aria-label="Todo List">
+      <div class="todo-section__column 
+          column-issue 
+          todo-section__column-todo">
+        <h2 class="column-issue__title">Задачи:</h2>
+        <div class="column-issue__section-issue"></div>
+      </div>
+      <div class="todo-section__column 
+          column-issue 
+          todo-section__column-progress">
+        <h2 class="column-issue__title">В процессе:</h2>
+        <div class="column-issue__section-issue"></div>
+      </div>
+      <div class="todo-section__column 
+          column-issue 
+          todo-section__column-completed">
+        <h2 class="column-issue__title">Выполненно:</h2>
+        <div class="column-issue__section-issue"></div>
+      </div>
+    </section>
+  </main>
+</div>
 </body>
 </html>

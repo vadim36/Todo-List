@@ -1,0 +1,23 @@
+@use '../abstract/_index.scss' as *;
+
+.todo-section {
+  height: 100%;
+}
+
+.column-issue {
+  border-radius: var(--primary-border-radius);
+  background: hsl(var(--blue-gray-color));
+  color: hsl(var(--xlight-gray-color));
+
+  &__title {
+    display: block;
+    padding: .5rem;
+    width: 100%;
+    border-bottom: 1px solid hsl(var(--xlight-gray-color));
+    font-size: var(--x-font-size);;
+  }
+
+  &[data-hidden] {
+    display: none;
+  }
+}

@@ -14,7 +14,9 @@
 }
 
 %primary-button {
-  background: hsl(var(--blue-color));
+  --button-color: hsl(var(--blue-color));
+
+  background: var(--button-color);
   padding: .5rem;
   border-radius: var(--primary-border-radius);
   cursor: pointer;
@@ -27,6 +29,6 @@
   &:hover,
   &:focus {
     transition: box-shadow .25s;
-    box-shadow: 0 0 5px 1px hsl(var(--blue-color));
+    box-shadow: 0 0 5px 1px var(--button-color);
   }
 }

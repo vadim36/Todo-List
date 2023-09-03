@@ -1,8 +1,10 @@
 //?MEDIA QUERY ROOT 
 $mouseDeviceMedia: '(hover:hover) and (pointer:fine)';
 
-$l-size-media: '(width <= 1250px)';
-$s-size-media: '(width <= 600px)';
+$m-media-query: '(width <= 1500px)';
+$xm-media-query: '(width <= 1150px)';
+$s-media-query: '(width <= 650px)';
+$xs-media-query: '(width <= 400px)';
 
 //?COLOR ROOT
 :root {
@@ -10,25 +12,48 @@ $s-size-media: '(width <= 600px)';
   --h-gray: 213;
   --h-green: 84;
   --h-blue: 216;
+  --h-orange: 28;
 
   --s-100: 100%;
+  --s-80: 80%;
+  --s-20: 20%;
   --s-10: 10%;
   --s-0: 0%;
 
   --l-100: 100%;
+  --l-95: 95%;
   --l-70: 70%;
   --l-60: 60%;
   --l-50: 50%;
   --l-25: 25%;
+  --l-10: 10%;
   --l-0: 0%;
 
   --primary-color: var(--h-0) var(--s-100) var(--l-0);
   --secondary-color: var(--h-0) var(--s-100) var(--l-100);
 
   --light-gray-color: var(--h-0) var(--s-0) var(--l-70);
+  --xlight-gray-color: var(--h-gray) var(--s-0) var(--l-95);
+  --blue-gray-color: var(--h-gray) var(--s-20) var(--l-25);
   --gray-color: var(--h-gray) var(--s-10) var(--l-25);
   --green-color: var(--h-green) var(--s-100) var(--l-60);
   --blue-color: var(--h-blue) var(--s-100) var(--l-50);
+  --orange-color: var(--h-orange) var(--s-80) var(--l-50); 
+}
+
+:root:has(body[dark-mode]) {
+  --l-100: 0%;
+  --l-95: 80%;
+  --l-70: 55%;
+  --l-60: 45%;
+  --l-50: 35%;
+  --l-25: 20%;
+  --l-10: 10%;
+  --l-0: 100%;
+
+  #button_toggle-theme {
+    --button-color: hsl(var(--primary-color));
+  }
 }
 
 //?MAIN ROOT

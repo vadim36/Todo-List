@@ -2,108 +2,109 @@
 @use '../base/hidden.scss' as *;
 
 .header {
-  display: flex;
-  align-items: center;
   background: hsl(var(--gray-color));
   color: hsl(var(--secondary-color));
-  height: 6.5dvh;
-  padding: 2rem 0;
-  font-size: 1.25rem;
+  height: 8.5dvh;
+  padding: 2rem 1rem;
+  font-size: var(--primary-font-size);
+  display: flex;
+  align-items: center;
 
-  &__form-select {
-    flex: .7;
-  }
-
-  &__nav-todo {
-    flex: 1.2;
-  }
-
-  &__form-add-tab {
+  > * {
     flex: 1;
   }
 
-  &__button-show_menu {
-    display: none;
-    cursor: pointer;
-
-    @media #{$l-size-media} {
-      display: block;
-    }
+  &__nav {
+    flex: 1.5;
   }
 }
 
-.header__nav-todo ul {
+.header__nav {
   display: flex;
   justify-content: center;
-  gap: 1.75rem;
+}
 
-  .header__link-nav {
+.nav-select__link {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+
+  &[data-selected] {
+    color: hsl(var(--green-color));
+  }
+
+  a {
     cursor: pointer;
-    transition: .56s;
-    font-size: 1.5rem;
+    font-size: var(--x-font-size);
+    transition: font-size .35s;
 
-    @media #{$s-size-media} {
-      &:not(:is([data-selected])) {
-        display: none;
-      }
+    @media #{$xs-media-query} {
+      font-size: var(--xs-font-size);
+    }
 
-      &:is([data-selected]) {
-        font-size: 1.75rem;
+    @media #{$mouseDeviceMedia} {
+      &:hover {
+        font-size: calc(var(--x-font-size) * 1.125);
       }
     }
 
-    &[data-selected] {
-      color: hsl(var(--green-color));
-    }
-
-    &:hover {
-      @media #{$mouseDeviceMedia} {
-        transform: scale(1.125);
+    @media #{$xs-media-query} and #{$mouseDeviceMedia} {
+      &:hover {
+        font-size: calc(var(--xs-font-size) * 1.125);
       }
     }
   }
+
+  .nav-select__button-rename {
+    cursor: pointer;
+    display: inline-flex;
+    width: 2rem;
+    aspect-ratio: 1;
+  }
 }
 
-.form-select {
+.header__container-toggle-theme {
   display: flex;
   justify-content: center;
 
-  @media #{$l-size-media} {
+  @media #{$m-media-query} {
     display: none;
-  }
-
-  legend {
-    @extend .vs-hidden;
-  }
-
-  &__input-select {
-    @extend %form-element;
   }
 }
 
-.form-add-tab {
-  @media #{$l-size-media} {
-    display: none;
-  }
+.form-add__input {
+  @extend %form-element;
+  min-width: 18rem;
+}
 
-  fieldset {
-    width: 100%;
-    height: 100%;
+.form-add__submit {
+  @extend %primary-button;
+}
+
+.header__container-aside-toggle {
+  display: none;
+
+  @media #{$m-media-query} {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-  
-    legend {
-      @extend .vs-hidden;
-    }
+    flex: .25;
   }
+}
 
-  &__input {
-    @extend %form-element;
-    min-width: 18rem;
+.header__button-aside-toggle {
+  display: inline-flex;
+  align-self: center;
+  cursor: pointer;
+  width: 2.75rem;
+  aspect-ratio: 1;
+  transition: rotate 250ms ease-out;
+
+  &[aria-expanded="true"] {
+    rotate: 180deg;
   }
+}
 
-  &__submit {
-    @extend %primary-button;
+.header__form-add {
+  @media #{$xm-media-query} {
+    display: none;
   }
 }
