@@ -1,10 +1,11 @@
-//?MEDIA QUERY ROOT 
+//?MEDIA QUERY ROOT
 $mouseDeviceMedia: '(hover:hover) and (pointer:fine)';
-
-$m-media-query: '(width <= 1500px)';
-$xm-media-query: '(width <= 1150px)';
-$s-media-query: '(width <= 650px)';
-$xs-media-query: '(width <= 400px)';
+  
+$m-media-query: 1500px;
+$xm-media-query: 1150px;
+$ms-media-query: 1000px;
+$s-media-query: 650px;
+$xs-media-query: 400px;
 
 //?COLOR ROOT
 :root {
@@ -51,7 +52,8 @@ $xs-media-query: '(width <= 400px)';
   --l-10: 10%;
   --l-0: 100%;
 
-  #button_toggle-theme {
+  #button_toggle-theme,
+  #button_toggle-theme_aside {
     --button-color: hsl(var(--primary-color));
   }
 }
@@ -59,4 +61,5 @@ $xs-media-query: '(width <= 400px)';
 //?MAIN ROOT
 :root {
   --primary-border-radius: .25rem;
+  --aside-width: 30vw;
 }

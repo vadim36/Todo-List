@@ -1,10 +1,13 @@
-export function toggleTheme():void {
-  if (document.body.getAttribute('dark-mode') === '') {
-    localStorage.setItem('theme', 'light');
-    return document.body.removeAttribute('dark-mode');
+export function toggleTheme(event):void {
+  if (event.target.matches('[id^="button_toggle-theme"]')) {
+    if (document.body.getAttribute('dark-mode') === '') {
+      localStorage.setItem('theme', 'light');
+      return document.body.removeAttribute('dark-mode');
+    }
+
+    localStorage.setItem('theme', 'dark');
+    return document.body.setAttribute('dark-mode', '');
   }
-  localStorage.setItem('theme', 'dark');
-  return document.body.setAttribute('dark-mode', '');
 }
 
 export function loadTheme():void | null {

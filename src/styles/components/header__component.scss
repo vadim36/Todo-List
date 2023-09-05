@@ -38,7 +38,7 @@
     font-size: var(--x-font-size);
     transition: font-size .35s;
 
-    @media #{$xs-media-query} {
+    @media (width <= #{$xs-media-query}) {
       font-size: var(--xs-font-size);
     }
 
@@ -48,7 +48,7 @@
       }
     }
 
-    @media #{$xs-media-query} and #{$mouseDeviceMedia} {
+    @media (width <= #{$xs-media-query}) and (#{$mouseDeviceMedia}) {
       &:hover {
         font-size: calc(var(--xs-font-size) * 1.125);
       }
@@ -67,7 +67,7 @@
   display: flex;
   justify-content: center;
 
-  @media #{$m-media-query} {
+  @media (width <= #{$m-media-query}) {
     display: none;
   }
 }
@@ -84,7 +84,7 @@
 .header__container-aside-toggle {
   display: none;
 
-  @media #{$m-media-query} {
+  @media (width <= #{$m-media-query}) {
     display: flex;
     flex: .25;
   }
@@ -96,7 +96,7 @@
   cursor: pointer;
   width: 2.75rem;
   aspect-ratio: 1;
-  transition: rotate 250ms ease-out;
+  transition: rotate 400ms ease-out;
 
   &[aria-expanded="true"] {
     rotate: 180deg;
@@ -104,7 +104,7 @@
 }
 
 .header__form-add {
-  @media #{$xm-media-query} {
+  @media (width <= #{$xm-media-query}) {
     display: none;
   }
 }

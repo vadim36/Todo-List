@@ -20,17 +20,12 @@ div {
   flex-direction: column;
   height: 100vh;
   background: hsl(var(--secondary-color));
+  position: relative;
+  overflow-x: hidden;
 }
 
-.main {
-  display: flex;
-  align-items: flex-start;
-  flex: 1;
-  overflow-y: hidden;
-  height: 100%;
-}
-
-#button_toggle-theme {
+#button_toggle-theme,
+#button_toggle-theme_aside {
   --button-color: hsl(var(--orange-color));
   @extend %primary-button;
 }

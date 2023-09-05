@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo-list</title>
+  <link rel="stylesheet" href="styles/main.scss">
   <script src="scripts/index.ts" type="module" defer></script>
 </head>
 <body>
@@ -52,7 +53,26 @@
     class="aside" 
     aria-expanded="false" 
     data-type="menu_aside">
-    Menu
+    <div class="aside__container-toggle-theme">
+      <button id="button_toggle-theme_aside">Переключить тему</button>
+    </div>
+    <form class="aside__form-add form-add" name="form_add_tab__aside">
+      <fieldset>
+        <legend class="vs-hidden">Добавьте таблицу</legend>
+        <input type="text" 
+          name="form_add_tab_input" 
+          class="form-add__input"
+          placeholder="Введите название таблицы..."
+        >
+      <button 
+        type="submit" 
+        name="form_add_tab_submit"
+        class="form-add__submit">
+          Добавить
+      </button>
+      </fieldset>
+    </form>
+    <button class="aside__button-close" data-type="close_aside_button">Закрыть</button>
   </aside>
   <main class="main">
     <section class="main__section-todo todo-section" aria-label="Todo List">
