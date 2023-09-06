@@ -61,5 +61,6 @@ $xs-media-query: 400px;
 //?MAIN ROOT
 :root {
   --primary-border-radius: .25rem;
+  --primary-border: 1px solid hsl(var(--light-gray-color));
   --aside-width: 30vw;
 }

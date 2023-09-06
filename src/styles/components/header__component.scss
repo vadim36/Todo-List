@@ -33,7 +33,20 @@
     color: hsl(var(--green-color));
   }
 
-  a {
+  [data-type="table_link"][contenteditable="true"] {
+    outline: var(--primary-border);
+    border-radius: var(--primary-border-radius);
+    padding: .2rem .3rem;
+    cursor: text;
+  
+    @media #{$mouseDeviceMedia} {
+      &:hover {
+        font-size: var(--x-font-size);
+      }
+    }
+  }
+
+  [data-type="table_link"] {
     cursor: pointer;
     font-size: var(--x-font-size);
     transition: font-size .35s;

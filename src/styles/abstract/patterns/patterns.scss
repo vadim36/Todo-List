@@ -1,11 +1,11 @@
 @use '../root' as *;
 
 %form-element {
-  outline: 1px solid hsl(var(--light-gray-color));
+  outline: var(--primary-border);
   padding: .35rem .45rem;
   border-radius: var(--primary-border-radius);
   cursor: pointer;
-  color: hsl(0 0 100);
+  color: hsl(0 0% 100%);
 
   &:hover,
   &:focus {
