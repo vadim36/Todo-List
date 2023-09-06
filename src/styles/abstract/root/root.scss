@@ -39,7 +39,8 @@ $xs-media-query: 400px;
   --gray-color: var(--h-gray) var(--s-10) var(--l-25);
   --green-color: var(--h-green) var(--s-100) var(--l-60);
   --blue-color: var(--h-blue) var(--s-100) var(--l-50);
-  --orange-color: var(--h-orange) var(--s-80) var(--l-50); 
+  --orange-color: var(--h-orange) var(--s-80) var(--l-50);
+  --red-color: var(--h-0) var(--s-80) var(--l-50);
 }
 
 :root:has(body[dark-mode]) {

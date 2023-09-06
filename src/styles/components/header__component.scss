@@ -34,7 +34,7 @@
   }
 
   [data-type="table_link"][contenteditable="true"] {
-    outline: var(--primary-border);
+    outline: 3px solid hsl(var(--red-color));
     border-radius: var(--primary-border-radius);
     padding: .2rem .3rem;
     cursor: text;

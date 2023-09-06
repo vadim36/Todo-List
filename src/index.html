@@ -30,7 +30,7 @@
       <strong class="vs-hidden">Выберите таблицу:</strong>
       <ul>
         <li class="nav-select__link" data-selected>
-          <a href="" data-type="table_link">Текущая</a>
+          <a href="#primary_table" data-type="table_link">Текущая</a>
           <button class="nav-select__button-rename" data-type="rename-title_button">
             <img src="assets/rename-svgrepo-com.svg" alt="rename icon">
           </button>
@@ -75,25 +75,28 @@
     <button class="aside__button-close" data-type="close_aside_button">Закрыть</button>
   </aside>
   <main class="main">
-    <section class="main__section-todo todo-section" aria-label="Todo List">
-      <div class="todo-section__column 
-          column-issue 
-          todo-section__column-todo">
-        <h2 class="column-issue__title">Задачи:</h2>
-        <div class="column-issue__section-issue"></div>
-      </div>
-      <div class="todo-section__column 
-          column-issue 
-          todo-section__column-progress">
-        <h2 class="column-issue__title">В процессе:</h2>
-        <div class="column-issue__section-issue"></div>
-      </div>
-      <div class="todo-section__column 
-          column-issue 
-          todo-section__column-completed">
-        <h2 class="column-issue__title">Выполненно:</h2>
-        <div class="column-issue__section-issue"></div>
-      </div>
+    <section 
+      id="primary_table" 
+      class="main__section-todo todo-section" 
+      aria-label="Todo List">
+        <div class="todo-section__column 
+            column-issue 
+            todo-section__column-todo">
+          <h2 class="column-issue__title">Задачи:</h2>
+          <div class="column-issue__section-issue"></div>
+        </div>
+        <div class="todo-section__column 
+            column-issue 
+            todo-section__column-progress">
+          <h2 class="column-issue__title">В процессе:</h2>
+          <div class="column-issue__section-issue"></div>
+        </div>
+        <div class="todo-section__column 
+            column-issue 
+            todo-section__column-completed">
+          <h2 class="column-issue__title">Выполненно:</h2>
+          <div class="column-issue__section-issue"></div>
+        </div>
     </section>
   </main>
 </div>
