@@ -2,10 +2,11 @@
 $mouseDeviceMedia: '(hover:hover) and (pointer:fine)';
   
 $m-media-query: 1500px;
+$mm-media-query: 1250px;
 $xm-media-query: 1150px;
 $ms-media-query: 1000px;
 $s-media-query: 650px;
-$xs-media-query: 400px;
+$xs-media-query: 450px;
 
 //?COLOR ROOT
 :root {
@@ -36,6 +37,7 @@ $xs-media-query: 400px;
   --light-gray-color: var(--h-0) var(--s-0) var(--l-70);
   --xlight-gray-color: var(--h-gray) var(--s-0) var(--l-95);
   --blue-gray-color: var(--h-gray) var(--s-20) var(--l-25);
+  --dark-gray-color: var(--h-gray) var(--s-20) var(--l-10);
   --gray-color: var(--h-gray) var(--s-10) var(--l-25);
   --green-color: var(--h-green) var(--s-100) var(--l-60);
   --blue-color: var(--h-blue) var(--s-100) var(--l-50);

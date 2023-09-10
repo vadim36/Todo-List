@@ -1,5 +1,8 @@
 import { toggleTheme, loadTheme } from './modules/ToggleTheme';
 import { Aside } from './modules/Aside';
+import { TodoItem } from './modules/TodoItem';
+import { issueFormHandler } from './modules/IssueFormHandler';
+import { deleteIssueHandler } from './modules/DeleteIssueHandler';
 
 //*Toggle theme on site
 document.addEventListener('click', toggleTheme);
@@ -39,3 +42,18 @@ $header?.addEventListener('click', (event):void => {
         : String(true);
   }
 });
+
+//*Add todo
+const $main = document.querySelector('.main');
+$main?.addEventListener('click', (event):void => {
+  const target = (event.target as HTMLElement).closest('[data-type="button_add-todo"]');
+
+  if (target) {
+    const $issueColumn = target.parentElement
+      ?.closest('.column-issue')?.querySelector('.column-issue__section-issue');
+    new TodoItem($issueColumn as HTMLElement); 
+  }
+});
+
+$main?.addEventListener('submit', issueFormHandler);
+$main?.addEventListener('click', deleteIssueHandler);

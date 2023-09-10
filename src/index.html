@@ -78,23 +78,42 @@
     <section 
       id="primary_table" 
       class="main__section-todo todo-section" 
-      aria-label="Todo List">
+      aria-label="Todo List"
+      data-selected>
         <div class="todo-section__column 
             column-issue 
             todo-section__column-todo">
-          <h2 class="column-issue__title">Задачи:</h2>
+          <div class="column-issue__header">
+            <h2 class="column-issue__title">Задачи:</h2>
+            <button 
+              class="column-issue__button-add" 
+              type="submit"
+              data-type="button_add-todo">Добавить Задачу</button>
+          </div>
           <div class="column-issue__section-issue"></div>
         </div>
         <div class="todo-section__column 
             column-issue 
             todo-section__column-progress">
-          <h2 class="column-issue__title">В процессе:</h2>
+          <div class="column-issue__header">
+            <h2 class="column-issue__title">В процессе:</h2>
+            <button 
+              class="column-issue__button-add" 
+              type="submit"
+              data-type="button_add-todo">Добавить Задачу</button>
+          </div>
           <div class="column-issue__section-issue"></div>
         </div>
         <div class="todo-section__column 
             column-issue 
             todo-section__column-completed">
-          <h2 class="column-issue__title">Выполненно:</h2>
+          <div class="column-issue__header">
+            <h2 class="column-issue__title">Выполненно:</h2>
+            <button 
+              class="column-issue__button-add" 
+              type="submit"
+              data-type="button_add-todo">Добавить Задачу</button>
+          </div>
           <div class="column-issue__section-issue"></div>
         </div>
     </section>

@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3",
-    "dart-sass": "^1.25.0"
+    "dart-sass": "^1.25.0",
+    "gsap": "^3.12.2"
   }
 }

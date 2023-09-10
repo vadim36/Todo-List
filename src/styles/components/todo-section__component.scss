@@ -28,16 +28,44 @@
   color: hsl(var(--xlight-gray-color));
   width: 30vw;
   min-height: 9rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
 
   @media (width <= #{$ms-media-query}) {
     width: auto;
   }
 
-  &__title {
-    display: block;
+  &__header {
     padding: .5rem;
     width: 100%;
     border-bottom: 1px solid hsl(var(--xlight-gray-color));
+
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: sticky;
+    top: 0;
+    background: hsl(var(--blue-gray-color));
+    z-index: 2;
+
+    @media (width <= #{$mm-media-query}) {
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    @media (width <= #{$ms-media-query}) {
+      flex-direction: row;
+      gap: 0;
+    }
+
+    @media (width <= #{$xs-media-query}) {
+      flex-direction: column;
+      gap: .5rem;
+    }
+  }
+
+  &__title {
     font-size: var(--x-font-size);
 
     @media (width <= #{$ms-media-query}) {
@@ -47,5 +75,70 @@
     @media (width <= #{$xs-media-query}) {
       font-size: var(--x-font-size);
     }
+  }
+
+  &__button-add {
+    @extend %primary-button;
+    font-size: var(--primary-font-size);
+  }
+
+  &__section-issue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: .5rem;
+  }
+}
+
+.issue {
+  background: hsl(var(--dark-gray-color));
+  border-radius: var(--primary-border-radius);
+  width: 85%;
+  box-shadow: 0 0 7px 1px rgba(12, 12, 12, 0.72);
+  padding: .5rem .45rem;
+  font-size: var(--primary-font-size);
+
+  &:not([data-editable]) {
+    cursor: grab;
+  }
+}
+
+.issue > form {
+  display: grid;
+  grid-template-columns: 1fr 6.65rem;
+  grid-template-rows: 2.5rem 9.5rem;
+  gap: .6rem;
+  width: 100%;
+
+  input{
+    @extend %form-element;
+    width: 14rem;
+  }
+
+  textarea {
+    @extend %form-element;
+    max-width: 22.5rem;
+    padding: .5rem .5rem 0 .5rem;
+    overflow-wrap: break-word;
+    overflow-y: visible;
+  }
+
+  button {
+    @extend %primary-button;
+
+    &[data-type="button-add_issue"] {
+      grid-column-start: 2;
+      grid-row-start: 1;
+    }
+
+    &[data-type="button-remove_issue"] {
+      align-self: start;
+      --button-color: hsl(var(--red-color));
+    }
+  }
+
+  &::placeholder {
+    user-select: none;
   }
 }
